@@ -1,0 +1,57 @@
+#fondo{
+    background-image: url("./../../../assets/recursos/fondo2.png");
+    background-size: 500px;
+    
+}
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+
+
+body{
+    font-family: Arial, Helvetica;
+    background: #e8e8e8;
+}
+
+.menu div{
+    list-style: none;
+    padding: 0;
+    background: #e8e8e8;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+div a{
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+    display: block;
+}
+
+.menu div div a{ 
+    display: inline-block;
+    text-align: center;
+}
+
+
+#cajaGrande{
+    display: flex;
+}
+
+#imagen img{
+    height: 30px;
+}
+
+footer {
+    padding: 11.413px 64.6739px;
+    background: #01255b;
+    height: 131.83px;
+    left: calc(50% - 1366px/2);
+  }
+  .my-4 {
+     margin-bottom: 0!important; 
+  }

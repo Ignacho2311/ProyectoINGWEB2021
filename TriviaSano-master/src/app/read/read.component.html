@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    
+  <ul *ngFor="let us of readData"> 
+     <li>Correo:  {{us.correo}}</li>
+     <li> Contrasenna: {{us.contrasenna}}</li>
+     <li>Nombre: {{us.nombre}}</li>
+     <li>Edad: {{us.edad}}</li>
+     <li>Fecha Nacimiento: {{us.fechaNacimiento}}</li>
+     <li>Sexo: {{us.sexo}}</li>
+     <li>Estatura: {{us.estatura}}</li>
+     <li>Peso: {{us.peso}}</li>
+     <li>Enfermedad Cardiaca: {{us.enfermedadCardiaca}}</li>
+     <li>Enfermedad Respiratoria: {{us.enfermedadRespiratoria}}</li>
+     <li>Cirugia: {{us.cirugia}}</li>
+     <li>Alergia: {{us.alergia}}</li>
+     <li>Enfermedad Degenerativa: {{us.enfermedadDegenerativa}}</li>
+     <li>Fútbol: {{us.futbol}}</li>
+     <li>Baloncesto: {{us.baloncesto}}</li>
+     <li>Voleyball: {{us.voleyball}}</li>
+     <li>Salsa: {{us.salsa}}</li>
+     <li>Zumba: {{us.zumba}}</li>
+     <li>Folklor: {{us.folklor}}</li>
+     <button class="btn btn-sm btn-danger" (click)="deleteCorreo(us.correo)" >Borrar cuenta</button>
+     &nbsp;
+     <a [routerLink]="['/formulario',us.correo]" routerLinkActive="router-link-active"  class="btn btn-sm btn-success">Actualizar</a>
+    </ul>
+</div>

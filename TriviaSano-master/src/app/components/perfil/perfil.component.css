@@ -1,0 +1,18 @@
+#botonPerfil{
+    background-color: transparent;
+    border: none;
+}
+
+#cajaPerfil{
+    margin-top: 10%;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+
+.columnas{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}

@@ -1,0 +1,323 @@
+<body>
+  
+  <nav class="menu">
+    <div id="cajaGrande">
+      <div id="imagen">
+        <a><img id="logo" src="./../../../assets/recursos/TS.png" ></a>
+      </div>
+      <div id ="subMenu">
+        <div>
+          <a class="nav-link" href="" >Nosotros</a>
+        </div>
+        <div>
+          <a class="nav-link" href="" >Conocenos</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+</body>
+ <h1>Crear cuenta</h1>
+    <div id="fondo" class="row d-flex justify-content-center flex-column align-items-center">
+      <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-9 text-center">
+        <div class="px-0 pt-4 pb-0 mt-3 mb-3">
+          <form [formGroup]="formulario" class="row gx-4 gy-3 d-flex justify-content-evenly">
+
+            <div class="col-sm-4">
+              <label>Correo Electronico</label>
+              <input
+                type="email" formControlName="correo" class="form-control"
+                placeholder="andres@gmail.com" 
+              />
+              <div *ngIf="formulario.controls['correo'].invalid && (formulario.controls['correo'].dirty || formulario.controls['correo'].touched)" class="alert alert-danger">
+                  <div *ngIf="formulario.controls['correo'].hasError('required')">
+                      Campo obligatorio
+                  </div>
+                  <div *ngIf="formulario.controls['correo'].hasError('email')">
+                      Debe ser tipo example@example.com
+                  </div>
+              </div>
+            </div>
+
+            <div class="col-sm-2">
+              <label>Contraseña</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="180" formControlName="contrasenna"
+              />
+            </div>
+
+            <div class="col-sm-3">
+              <label>Nombre</label>
+              <input
+                type="text" formControlName="nombre"
+                class="form-control"
+                placeholder="Andres Gallego" 
+              />
+              <div *ngIf="formulario.controls['nombre'].invalid && (formulario.controls['nombre'].dirty || formulario.controls['nombre'].touched)" class="alert alert-danger">
+                <div *ngIf="formulario.controls['nombre'].hasError('required')">
+                    Campo obligatorio
+                </div>
+            </div>
+            </div>
+
+            <div class="col-sm-3">
+              <label>Edad (en años) </label>
+              <input
+                type="text" formControlName="edad"
+                class="form-control"
+                placeholder="Edad" 
+              />
+            </div>
+            
+            <div *ngIf="formulario.controls['edad'].invalid && (formulario.controls['edad'].dirty || formulario.controls['edad'].touched)" class="alert alert-danger">
+              <div *ngIf="formulario.controls['edad'].hasError('required')">
+                  Campo obligatorio
+              </div>
+            </div>
+
+            
+
+
+            <div class="col-sm-4">
+              <label>Fecha de nacimiento</label>
+              <input
+                type="text" formControlName="fechaNacimiento"
+                class="form-control"
+                placeholder="10/09/2005" 
+              />
+              <div *ngIf="formulario.controls['fechaNacimiento'].invalid && (formulario.controls['fechaNacimiento'].dirty || formulario.controls['fechaNacimiento'].touched)" class="alert alert-danger">
+                  <div *ngIf="formulario.controls['fechaNacimiento'].hasError('required')">
+                      Campo obligatorio
+                  </div>
+              </div>
+            </div>
+
+
+            <div class="col-sm-2">
+              <label>Sexo</label>
+              <select formControlName="sexo" class="form-select" id="specificSizeSelect">
+                <option value="0">Masculino</option>
+                <option  value="1">Femenino</option>
+              </select>
+              <div *ngIf="formulario.controls['sexo'].invalid && (formulario.controls['sexo'].dirty || formulario.controls['sexo'].touched)" class="alert alert-danger">
+                  <div *ngIf="formulario.controls['sexo'].hasError('required') ">
+                      Campo obligatorio
+                  </div>
+              </div>
+            </div>
+
+
+            <div class="col-sm-2">
+              <label>Estatura(cm)</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="180" formControlName="estatura"
+              />
+            </div>
+
+            <div class="col-sm-2">
+              <label>Peso (kg) </label>
+              <select formControlName="peso" class="form-select" id="specificSizeSelect">
+                <option selected>Escoge</option>
+                <option value="50,0" >50 kg</option>
+                <option value="60,0">60 kg</option>
+                <option value="70,0">70 kg</option>
+                <option value="80,0">80 kg</option>
+              </select>
+            </div>
+
+
+            <div class="col-4">
+              <div><label>¿Presenta en enfermedades cardiacas?</label></div>
+                <div class="d-flex justify-content-around align-items-center">
+                <div class="form-check form-check-inline">
+                  <input formControlName="enfermedadCardiaca" class="form-check-input" type="radio" id="inlineCheckbox1" value="si">
+                  <label class="form-check-label" for="inlineCheckbox1">Si</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input formControlName="enfermedadCardiaca" class="form-check-input" type="radio" id="inlineCheckbox2" value="no">
+                  <label class="form-check-label" for="inlineCheckbox2">No</label>
+                </div>
+                  <input  type="text" class="form-control" placeholder="Cuales" style="width: 50%;"/>
+                </div>
+            </div>
+
+            <div class="col-4">
+              <div><label>¿Presenta en enfermedades respiratorias?</label></div>
+              <div class="d-flex justify-content-around align-items-center">
+              <div class="form-check form-check-inline">
+                <input formControlName="enfermedadRespiratoria" class="form-check-input" type="radio" id="inlineCheckbox1" value="si">
+                <label class="form-check-label" for="inlineCheckbox1">Si</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input formControlName="enfermedadRespiratoria" class="form-check-input" type="radio" id="inlineCheckbox2" value="no">
+                <label class="form-check-label" for="inlineCheckbox2">No</label>
+              </div>
+              <input  type="text" class="form-control" placeholder="Cuales" style="width: 50%;"/>
+            </div>
+            </div>
+
+
+            <div class="col-4">
+              <div><label>¿Has tenido alguna cirugía?</label></div>
+              <div class="d-flex justify-content-around align-items-center">
+              <div class="form-check form-check-inline">
+                <input formControlName="cirugia" class="form-check-input" type="radio" id="inlineCheckbox1" value="si">
+                <label class="form-check-label" for="inlineCheckbox1">Si</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input formControlName="cirugia" class="form-check-input" type="radio" id="inlineCheckbox2" value="no">
+                <label class="form-check-label" for="inlineCheckbox2">No</label>
+              </div>
+              <input  type="text" class="form-control" placeholder="Cuales" style="width: 50%;"/>
+            </div>
+            </div>
+
+
+            <div class="col-4">
+              <div><label>¿Tienes alguna alergia?</label></div>
+              <div class="d-flex justify-content-around align-items-center">
+              <div class="form-check form-check-inline">
+                <input formControlName="alergia" class="form-check-input" type="radio" id="inlineCheckbox1" value="si">
+                <label class="form-check-label" for="inlineCheckbox1">Si</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input formControlName="alergia" class="form-check-input" type="radio" id="inlineCheckbox2" value="no">
+                <label class="form-check-label" for="inlineCheckbox2">No</label>
+              </div>
+              <input  type="text" class="form-control" placeholder="Cuales" style="width: 50%;"/>
+            </div>
+            </div>
+
+            <div class="col-4">
+              <div><label>¿Tienes enfermedades degenerativas?</label></div>
+              <div class="d-flex justify-content-around align-items-center">
+              <div class="form-check form-check-inline">
+                <input formControlName="enfermedadDegenerativa" class="form-check-input" type="radio" id="inlineCheckbox1" value="si">
+                <label class="form-check-label" for="inlineCheckbox1">Si</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input formControlName="enfermedadDegenerativa" class="form-check-input" type="radio" id="inlineCheckbox2" value="no">
+                <label class="form-check-label" for="inlineCheckbox2">No</label>
+              </div>
+              <input  type="text" class="form-control" placeholder="Cuales" style="width: 50%;"/>
+            </div>
+            </div>
+
+            <div class="col-4">
+              <div><label>¿Te gusta el fútbol?</label></div>
+              <div class="d-flex justify-content-around align-items-center">
+              <div class="form-check form-check-inline">
+                <input formControlName="futbol" class="form-check-input" type="radio" id="inlineCheckbox1" value="1">
+                <label class="form-check-label" for="inlineCheckbox1">Si</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input formControlName="futbol" class="form-check-input" type="radio" id="inlineCheckbox2" value="0">
+                <label class="form-check-label" for="inlineCheckbox2">No</label>
+              </div>
+            </div>
+            </div>
+
+
+            <div class="col-4">
+              <div><label>¿Te gusta el baloncesto?</label></div>
+              <div class="d-flex justify-content-around align-items-center">
+              <div class="form-check form-check-inline">
+                <input formControlName="baloncesto" class="form-check-input" type="radio" id="inlineCheckbox1" value="1">
+                <label class="form-check-label" for="inlineCheckbox1">Si</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input formControlName="baloncesto" class="form-check-input" type="radio" id="inlineCheckbox2" value="0">
+                <label class="form-check-label" for="inlineCheckbox2">No</label>
+              </div>
+            </div>
+            </div>
+
+            <div class="col-4">
+              <div><label>¿Te gusta el Voleyball?</label></div>
+              <div class="d-flex justify-content-around align-items-center">
+              <div class="form-check form-check-inline">
+                <input formControlName="voleyball" class="form-check-input" type="radio" id="inlineCheckbox1" value="1">
+                <label class="form-check-label" for="inlineCheckbox1">Si</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input formControlName="voleyball" class="form-check-input" type="radio" id="inlineCheckbox2" value="0">
+                <label class="form-check-label" for="inlineCheckbox2">No</label>
+              </div>
+            </div>
+            </div>
+
+
+            <div class="col-4">
+              <div><label>¿Te gusta bailar salsa?</label></div>
+              <div class="d-flex justify-content-around align-items-center">
+              <div class="form-check form-check-inline">
+                <input formControlName="salsa" class="form-check-input" type="radio" id="inlineCheckbox1" value="1">
+                <label class="form-check-label" for="inlineCheckbox1">Si</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input formControlName="salsa" class="form-check-input" type="radio" id="inlineCheckbox2" value="0">
+                <label class="form-check-label" for="inlineCheckbox2">No</label>
+              </div>
+            </div>
+            </div>
+
+            <div class="col-4">
+              <div><label>¿Te gusta bailar zumba?</label></div>
+              <div class="d-flex justify-content-around align-items-center">
+              <div class="form-check form-check-inline">
+                <input formControlName="zumba" class="form-check-input" type="radio" id="inlineCheckbox1" value="1">
+                <label class="form-check-label" for="inlineCheckbox1">Si</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input formControlName="zumba" class="form-check-input" type="radio" id="inlineCheckbox2" value="0">
+                <label class="form-check-label" for="inlineCheckbox2">No</label>
+              </div>
+            </div>
+            </div>
+
+            <div class="col-4">
+              <div><label>¿Te gusta bailar folklor?</label></div>
+              <div class="d-flex justify-content-around align-items-center">
+              <div class="form-check form-check-inline">
+                <input formControlName="folklor" class="form-check-input" type="radio" id="inlineCheckbox1" value="1">
+                <label class="form-check-label" for="inlineCheckbox1">Si</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input formControlName="folklor" class="form-check-input" type="radio" id="inlineCheckbox2" value="0">
+                <label class="form-check-label" for="inlineCheckbox2">No</label>
+              </div>
+            </div>
+            </div>
+
+
+
+
+            <div class=" col-lg-4 mt-2" *ngIf="!getparamcorreo" > <button class="btn btn-primary btn-sm" (click)="userSubmit()" [disabled]="!formulario.valid">Crear cuenta</button> </div>
+            
+
+            &nbsp;
+            <button *ngIf="getparamcorreo" class="btn btn-dark btn-sm" (click)="userUpdate()">Actualizar</button>
+      
+        </form>
+
+      
+        <footer class="d-flex flex-wrap justify-content-between align-items-center border-top">
+          <p class="col-md-4 mb-0 text-muted">Políticas de privacidad</p>
+      
+          <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+              <img src="../../../assets/recursos/TS.png" style="width: 10%;">
+          </a>
+      
+          <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+          </ul>
+        </footer>
+        

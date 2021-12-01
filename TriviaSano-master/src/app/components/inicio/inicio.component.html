@@ -1,0 +1,49 @@
+
+
+<div
+  class="container-expand d-flex justify-content-center flex-column align-items-center"
+  style="
+    background-image: url(../../../assets/recursos/fondo4.png);
+    padding: 50px;
+    height: 900px;
+    background-size: contain;
+    "
+>
+  <div class="row">
+    <div class="d-flex justify-content-center flex-column align-items-center">
+     <h1>¡Es hora de aprender jugando!</h1>
+      <main class="col col-lg-3 form-signin">       
+        <form [formGroup]="formulario" class="custom-form" method="post"class="d-flex justify-content-around flex-column">
+          <h1 class="form-tittle">Trivia Sano</h1>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input formControlName="correo" type="email" name = "email"class="form-control" placeholder="ejemplo@email.mx" required="required">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Contraseña
+            </label>
+            <input type="password" formControlName="contrasenna" name="password" required="required" class="form-control" placeholder="●●●●●●●●●●●●">
+          </div>
+          <div style="text-align: center;"><button type="submit" (click)=login() class="btn btn-primary" >Iniciar sesión</button></div>
+          <div style="text-align: center;">¿Olvidaste tu contraseña?</div>
+          <div style="text-align: center;"><a routerLink="/formulario" routerLinkActive="active">Crear cuenta</a></div>
+        </form>
+      </main>
+    </div>
+  </div>
+</div>
+<footer class="d-flex flex-wrap justify-content-between align-items-center border-top">
+  <p class="col-md-4 mb-0 text-muted">Políticas de privacidad</p>
+
+  <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <img src="../../../assets/recursos/TS.png" style="width: 10%;">
+  </a>
+
+  <ul class="nav col-md-4 justify-content-end">
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+  </ul>
+</footer>
